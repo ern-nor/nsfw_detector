@@ -32,7 +32,7 @@ RUN pip3 install --no-cache-dir \
     Pillow \
     transformers \
     PyMuPDF \
-    && pip3 install --no-cache-dir torch --index-url https://download.pytorch.org/whl/cpu
+    && pip3 install --no-cache-dir torch --index-url https://download.pytorch.org/whl/rocm6.2
 
 # 预下载模型
 RUN python3 -c "from transformers import pipeline; pipe = pipeline('image-classification', model='Falconsai/nsfw_image_detection', device=-1)"
